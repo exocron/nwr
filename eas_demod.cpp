@@ -318,7 +318,7 @@ void Demodulator::gotbyte(unsigned char c)
 
 void Demodulator::gotheader(const char *s)
 {
-    //printf("gotheader: %s\n", s);
+    printf("gotheader: %s\n", s);
     if (s == lastheader) {
         return;
     }
