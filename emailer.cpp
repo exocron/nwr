@@ -20,9 +20,9 @@ void base64(char *dest, const char *src, size_t n)
     char *d = dest;
     while (n >= 3) {
         *d++ = table[(*src & 0xFF) >> 2];
-        *d++ = table[((*src & 0xFF) << 4) & 0x3F | ((src[1] & 0xFF) >> 4)];
+        *d++ = table[(((*src & 0xFF) << 4) & 0x3F) | ((src[1] & 0xFF) >> 4)];
         src++;
-        *d++ = table[((*src & 0xFF) << 2) & 0x3F | ((src[1] & 0xFF) >> 6)];
+        *d++ = table[(((*src & 0xFF) << 2) & 0x3F) | ((src[1] & 0xFF) >> 6)];
         src++;
         *d++ = table[(*src & 0xFF) & 0x3F];
         src++;
@@ -33,7 +33,7 @@ void base64(char *dest, const char *src, size_t n)
         *d++ = table[((*src & 0xFF) << 4) & 0x3F];
     } else if (n == 2) {
         *d++ = table[(*src & 0xFF) >> 2];
-        *d++ = table[((*src & 0xFF) << 4) & 0x3F | ((src[1] & 0xFF) >> 4)];
+        *d++ = table[(((*src & 0xFF) << 4) & 0x3F) | ((src[1] & 0xFF) >> 4)];
         src++;
         *d++ = table[((*src & 0xFF) << 2) & 0x3F];
     }

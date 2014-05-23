@@ -632,7 +632,7 @@ if (Trace) printf("%d Client::notifyRead\n", getpid());
     }
     index += n;
     //printf("header: %.*s", Clients[i].index, Clients[i].request);
-    if (index > 4 && strncmp(request+index-4, "\r\n\r\n", 4) == 0 || strncmp(request+index-2, "\n\n", 2) == 0) {
+    if ((index > 4 && strncmp(request+index-4, "\r\n\r\n", 4) == 0) || strncmp(request+index-2, "\n\n", 2) == 0) {
         request[index] = 0;
         char *method = strtok(request, " ");
         char *url = strtok(NULL, " ");
