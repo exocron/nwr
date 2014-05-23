@@ -5,6 +5,8 @@
 
 #include <pcre.h>
 
+#include <string.h>
+
 #include "eas_decode.h"
 #include "eas_demod.h"
 

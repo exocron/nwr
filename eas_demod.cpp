@@ -1,5 +1,7 @@
 #include <assert.h>
 #include <math.h>
+#include <string.h>
+#include <stdio.h>
 
 #include "eas_demod.h"
 

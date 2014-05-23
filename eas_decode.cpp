@@ -2,6 +2,8 @@
 
 #include <pcre.h>
 
+#include <string.h>
+
 #include "eas_decode.h"
 
 using namespace std;
